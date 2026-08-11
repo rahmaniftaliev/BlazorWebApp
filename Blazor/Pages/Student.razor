@@ -4,15 +4,26 @@
 
 <h3>Student List</h3>
 
-<StudentDetail StudentName=@StudentList></StudentDetail>
+<StudentDetail StudentName=@StudentList OnClick="@Save" ></StudentDetail>
+
+<h5>@saveMessage</h5>
+
+
 
 @code {
 
     public string? StudentList { get; set; }
 
+    private string saveMessage;
+
     override protected async Task OnInitializedAsync()
     {
         StudentList = "John Jane Walker";
+    }
+
+    private void Save(EventArgs e)
+    {
+        saveMessage = "Student List Saved";
     }
 
 }
