@@ -1,0 +1,18 @@
+﻿@page "/students"
+@inject HttpClient Http
+
+
+<h3>Student List</h3>
+
+<StudentDetail StudentName=@StudentList></StudentDetail>
+
+@code {
+
+    public string? StudentList { get; set; }
+
+    override protected async Task OnInitializedAsync()
+    {
+        StudentList = "John Jane Walker";
+    }
+
+}
