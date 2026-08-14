@@ -1,0 +1,22 @@
+﻿@page "/validation"
+@using Blazor.Models
+
+
+<h3>Validation</h3>
+<EditForm Model="@productAddModel" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <InputText id="productName" @bind-Value="@productAddModel.ProductName" />
+    <InputText id="productDescription" @bind-Value="@productAddModel.Description" />
+    <button type="submit">Add Product</button>
+</EditForm>
+
+@code {
+    ProductAddModel productAddModel = new ProductAddModel();
+
+    private void HandleValidSubmit()
+    {
+        Console.WriteLine($"Product Name: {productAddModel.ProductName}");
+    }
+
+}
