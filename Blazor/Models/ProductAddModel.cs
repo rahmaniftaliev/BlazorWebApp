@@ -11,5 +11,9 @@ namespace Blazor.Models
         [Required(ErrorMessage = "Product Description is required")]
         [StringLength(40, ErrorMessage = "Character limit exceeded(Max 40)")]
         public string? Description { get; set; }
+
+
+        [Required(ErrorMessage = "CategoryId is required")]
+        public string? CategoryId { get; set; }
     }
 }
