@@ -6,7 +6,9 @@
 <EditForm Model="@productAddModel" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
+    <h4>Product Name</h4>
     <InputText id="productName" @bind-Value="@productAddModel.ProductName" />
+    <h4>Product Description</h4>
     <InputText id="productDescription" @bind-Value="@productAddModel.Description" />
     <button type="submit">Add Product</button>
 </EditForm>
