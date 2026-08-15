@@ -1,5 +1,6 @@
 ﻿@page "/todo"
 @inject HttpClient Http
+@inject IApiService ApiService
 @using Blazor.Models
 @using Blazor.Services
 
@@ -45,9 +46,8 @@ else
     TodoItem[]? todoItems;
 
     protected override async Task OnInitializedAsync()
-    {
-        JsonPlaceHolderApi jsonPlaceholderApi = new JsonPlaceHolderApi(Http);
-        todoItems = await jsonPlaceholderApi.GetTodos();
+    {  
+        todoItems = await ApiService.GetTodos();
     }
 
 

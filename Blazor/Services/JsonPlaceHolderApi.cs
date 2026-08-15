@@ -5,7 +5,7 @@ using System.Net.Http.Json;
 
 namespace Blazor.Services
 {
-    public class JsonPlaceHolderApi
+    public class JsonPlaceHolderApi:IApiService
     {
         private HttpClient _httpClient;
 
