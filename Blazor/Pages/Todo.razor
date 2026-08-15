@@ -1,5 +1,7 @@
 ﻿@page "/todo"
 @inject HttpClient Http
+@using Blazor.Models
+@using Blazor.Services
 
 
 <h1>Todo List</h1>
@@ -42,16 +44,11 @@ else
 
     TodoItem[]? todoItems;
 
-    override protected async Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
-        todoItems = await Http.GetFromJsonAsync<TodoItem[]>("https://jsonplaceholder.typicode.com/todos");
+        JsonPlaceHolderApi jsonPlaceholderApi = new JsonPlaceHolderApi(Http);
+        todoItems = await jsonPlaceholderApi.GetTodos();
     }
 
-    public class TodoItem
-    {
-        public int UserId { get; set; }
-        public int Id { get; set; }
-        public string? Title { get; set; }
-        public bool IsCompleted { get; set; }
-    }
+
 }

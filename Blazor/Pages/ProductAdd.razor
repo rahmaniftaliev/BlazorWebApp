@@ -15,7 +15,7 @@
 
                     <EditForm Model="@productAddModel" OnValidSubmit="@HandleSave">
                         <DataAnnotationsValidator />
-                        <ValidationSummary class="alert alert-danger" />
+                        @* <ValidationSummary class="alert alert-danger" /> *@
 
                         <div class="mb-3">
                             <label for="productName" class="form-label fw-semibold">
@@ -87,7 +87,6 @@
 </div>
 @code {
     ProductAddModel productAddModel = new ProductAddModel();
-
 
     private void HandleSave()
     {
