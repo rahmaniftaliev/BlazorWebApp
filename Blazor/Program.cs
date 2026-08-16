@@ -8,6 +8,6 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-builder.Services.AddSingleton<IApiService,JsonPlaceHolderApi>();
+builder.Services.AddScoped<IApiService,JsonPlaceHolderApi>();
 
 await builder.Build().RunAsync();
