@@ -1,15 +1,15 @@
 ﻿@page "/detail"
-@page "/detail/{id}"
+@page "/detail/{id:int}"
 
 <h3>Detail for @Id</h3>
 
 @code {
     [Parameter]
-    public string? Id { get; set; }
+    public int Id { get; set; }
 
-    protected override void OnInitialized()
-    {
-        Id = Id ?? "0";
-    }
+    // protected override void OnInitialized()
+    // {
+    //     Id = Id ?? 0;
+    // }
 
 }
